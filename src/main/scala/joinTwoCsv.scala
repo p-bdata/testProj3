@@ -25,13 +25,7 @@ object joinTwoCsv extends App {
     .option("inferSchema", true)
     .option("path", "E:\\MyBigData\\BigData_Materials\\Weekly-Progress\\week12\\downloadables\\dept.csv")
     .load()
-  /*  empDf.createOrReplaceTempView("emp")
-    deptDf.createOrReplaceTempView("dept")
 
-    val res = spark.sql(
-      """select e.ename, e.deptno, d.dname
-        from emp e join dept d
-        where e.deptno = d.deptno""")*/
 
   val res = empDf.join(deptDf, empDf("deptno").equalTo(deptDf("deptno")), "inner").selectExpr("ename", "dname")
   res.show()

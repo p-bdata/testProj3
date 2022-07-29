@@ -1,3 +1,3 @@
 object scalaTest1 extends App {
-println("hi")
+println("hello world")
 }
