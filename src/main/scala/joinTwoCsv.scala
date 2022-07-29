@@ -22,7 +22,7 @@ object joinTwoCsv extends App {
   val deptDf = spark.read
     .format("csv")
     .option("header", true)
-    .option("inferSchema", true)
+    .option("inferSchema", true )
     .option("path", "E:\\MyBigData\\BigData_Materials\\Weekly-Progress\\week12\\downloadables\\dept.csv")
     .load()
 
